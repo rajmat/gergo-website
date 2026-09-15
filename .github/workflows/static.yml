@@ -35,7 +35,7 @@ jobs:
           rm -f .npmrc
         
       - name: Force Public Installation
-        run: npm install --no-audit --no-fund --registry=https://npmjs.org
+        run: npm install --no-audit --no-fund --registry=https://registry.npmjs.org/
         
       - name: Build site
         run: npm run build
