@@ -10,7 +10,7 @@ interface LogoProps {
 export function Logo({ title = 'Stomfai Gergő' }: LogoProps) {
   return (
     <img
-      src="/logo.svg"
+      src="./logo.svg"
       alt={title}
       className={`h-[78px] w-[95.3px]`}
     />
