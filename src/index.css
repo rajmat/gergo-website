@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  Design tokens (Stomfai Gergő – pszichológus)                       */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-mono: "Space Mono", ui-monospace, "Courier New", monospace;
+  --font-brand: "Quicksand", system-ui, sans-serif;
+
+  /* Forest / olive greens */
+  --color-forest-900: #232c1e;
+  --color-forest-800: #2c3626;
+  --color-forest-700: #37432f;
+  --color-forest-600: #45543a;
+  --color-forest-500: #556349;
+  --color-forest-400: #6d7a5c;
+
+  /* Warm neutrals */
+  --color-cream-50: #f5f1e7;
+  --color-cream-100: #efeadd;
+  --color-cream-200: #e7e1d2;
+  --color-card: #f2efe6;
+
+  --color-ink: #35422b;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                               */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  background-image:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.28), rgba(0, 0, 0, 0.4)),
+    url("/gergo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Textured backgrounds (grunge feel from the mockups)               */
+/* ------------------------------------------------------------------ */
+.bg-forest-texture {
+  background-image:
+    url("/forest-background.png");
+  background-size: cover;
+}
+
+/* 
+.bg-cream-texture {
+  background-color: var(--color-cream-100);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+} */
+
+/* Grayscale placeholder for portrait / nature photos.
+   Replace the referenced images with real photography when available. */
+/* .bg-gergo {
+  background-color: #8b8b83;
+  background-image:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.28), rgba(0, 0, 0, 0.4)),
+    url('/gergo.png');
+    background-size: cover;
+  background-position: center;
+  filter: grayscale(1);
+} */
+
+/* Slightly raised, brush-like pills */
+.pill-brush {
+  border-radius: 9999px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Slim scrollbar for scrollable panels */
+.scroll-slim::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+.scroll-slim::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Subtle fade/slide used when switching pages */
+@keyframes viewIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-view-in {
+  animation: viewIn 0.45s ease both;
+}
